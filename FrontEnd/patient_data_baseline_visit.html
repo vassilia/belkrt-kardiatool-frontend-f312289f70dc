@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KardiaSoft | Starter</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="dist/css/skins/skin-red.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+
+<body class="hold-transition skin-red sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <div class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>K</b>S</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"> <img src="Images/img2_2.png" alt="Logo image" display="block" margin="auto"
+            width="170vw"></span>
+      </div>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account Menu -->
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="Images/doctor.png" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs" id="person_name"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="Images/doctor.png" class="img-circle" alt="User Image">
+                  <p id="username"></p>
+                  <p id="role_id">
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div style="text-align: center;">
+                    <a href="#" class="btn btn-default btn-flat" id="sign_out">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="Images/doctor.png" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p id="username_two">Alexander</p>
+            <p id="role_id_two">
+              <small>Doctor</small>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li><a href="main.html"><i class="fa fa-home"></i> <span>Home Page </span></a></li>
+          <li class="active"><a href="patient_data_list_patients.html"><i class="fa fa-users"></i> <span>Patient Data
+                Management</span></a></li>
+          <li><a href="#"><i class="fa fa-bar-chart-o"></i> <span>Patient Information Visualization</span></a></li>
+          <li><a href="#"><i class="fa fa-support"></i> <span>Clinical Decision Support</span></a></li>
+          <li><a href="#"><i class="fa fa-tint"></i> <span>Unassigned Measurements</span></a></li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Patient Data Management
+          <small>First visit details</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="main.html"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a href="patient_data_list_patients.html">Patient Data Management</a></li>
+          <li><a href="#">. . .</a></li>
+          <li class="active">First visit</li>
+        </ol>
+      </section>
+
+      <form id="baseline_visit">
+        <section class="content">
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- Custom Tabs -->
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab_user" data-toggle="tab">Patient details</a></li>
+                  <li><a href="#tab_demographic" data-toggle="tab">Demographic variables</a></li>
+                  <li><a href="#tab_cvd_history" data-toggle="tab">History of CVD</a></li>
+                  <li><a href="#tab_risk_factors" data-toggle="tab">Classical CV risk factors</a></li>
+                  <li><a href="#tab_other" data-toggle="tab">Other conditions</a></li>
+                  <li><a href="#tab_family_history" data-toggle="tab">Family history</a></li>
+                  <li><a href="#tab_lifestyle" data-toggle="tab">Lifestyle/Habits</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_user">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Patient details</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label>Visit date</label>
+                        <div class="input-group date">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control pull-right" id="datepicker" name="visitDate" required>
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+                      <!-- Visit description = Baseline
+                      <div class="form-group">
+                        <label>Visit description</label>
+                        <select class="form-control" id="opt_visit_description" required>
+                          <option value="">-- Select --</option>
+                        </select>
+                      </div>
+                      -->
+                      <div class="form-group">
+                        <label>Barcode</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="barcode" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Patient First Name</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="name" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Patient Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="surname" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Address - Street</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="address.street">
+                      </div>
+                      <div class="form-group">
+                        <label>Address - Number</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="address.streetNumber">
+                      </div>
+                      <div class="form-group">
+                        <label>Adress - Town/City</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." id="address.town">
+                      </div>
+                      <div class="form-group">
+                        <label>Telephone</label>
+                        <input type="text" class="form-control" placeholder="+301234567890" id="telephoneNumber">
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="tab_demographic">
+                    <div class="box-header with-border">
+                      <h3 class="box-title"><b>General demographic variables</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <form role="form">
+                        <!-- Study site = Study site of clinician
+                        <div class="form-group">
+                          <label>Study site</label>
+                          <select class="form-control" id="opt_study_site" name="" required>
+                            <option value="">-- Select --</option>
+                          </select>
+                        </div>
+                        -->
+                        <div class="form-group">
+                          <label>Study group</label>
+                          <select class="form-control" id="opt_study_group" name="studygroupId" required>
+                            <option value="">-- Select --</option>
+                          </select>
+                        </div>
+                        <strong>Diagnosis of the heart failure</strong>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="heartFailureDiagnosis" id="opt_hf_1" value="option1">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="heartFailureDiagnosis" id="opt_hf_2" value="option2" checked>
+                            No
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label>Year of diagnosis</label>
+                          <input type="text" class="form-control" id="year_diagnosis" placeholder="YYYY"
+                            name="diagnosisYear" disabled>
+                        </div>
+                        <label>Ejection Fraction (at the time of diagnosis)</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="efraction" name="ejectionFraction" disabled>
+                          <span class="input-group-addon">%</span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label>Aetiology</label>
+                          <select class="form-control" id="opt_aetiology" name="aetiologyId" disabled>
+                            <option value="">-- Select --</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Device</label>
+                          <select class="form-control" id="opt_device" name="medicalDeviceId" disabled>
+                            <option value="">-- Select --</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="tab_cvd_history">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Personal history of cardiovascular disease (CVD)</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <strong>History of myocardial infraction</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_mi" id="opt_mi_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_mi" id="opt_mi_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_mi" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Coronary artery disease (CAD) (confirmed by angiography only)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_cad" id="opt_cad_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_cad" id="opt_cad_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_cad" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>History of cerebrovascular accident (CVA) or transient ischemic attack (TIA)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_cva" id="opt_cva_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_cva" id="opt_cva_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_cva" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Peripheral vascular disease (any site)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_pvd" id="opt_pvd_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_pvd" id="opt_pvd_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_pvd" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Paroxysmal atrial fibrillation</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_afib" id="opt_afib_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_afib" id="opt_afib_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_afib" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Valvular heart disease (moderate or severe)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_vhd" id="opt_vhd_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_vhd" id="opt_vhd_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_vhd" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <div class="tab-pane" id="tab_risk_factors">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Classical cardiovascular risk factors</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <strong>Hypertension</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_hyp" id="opt_hyp_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_hyp" id="opt_hyp_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <strong>Hypercholesterolemia</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_chol" id="opt_chol_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_chol" id="opt_chol_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <strong>Diabetes melitus</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_diab" id="opt_diab_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_diab" id="opt_diab_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <div class="tab-pane" id="tab_other">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Other chronic medical conditions</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <strong>Obesity</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_ob" id="opt_ob_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_ob" id="opt_ob_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <strong>Chronic kidney disease (CKD)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_ckd" id="opt_ckd_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_ckd" id="opt_ckd_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_ckd" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Autoimmune disease</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_imm" id="opt_imm_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_imm" id="opt_imm_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_imm" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Pulmonary disease</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_pul" id="opt_pul_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_pul" id="opt_pul_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_pul" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Endocrine disease</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_endo" id="opt_endo_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_endo" id="opt_endo_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_endo" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Malignancies</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_mal" id="opt_mal_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_mal" id="opt_mal_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_mal_1" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify treatments</label>
+                        <textarea class="form-control" id="textarea_mal_2" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                      <strong>Other</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_other" id="opt_other_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_other" id="opt_other_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label>If yes, specify</label>
+                        <textarea class="form-control" id="textarea_other" rows="3" placeholder="Enter ..."
+                          disabled></textarea>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <div class="tab-pane" id="tab_family_history">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Family history</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <strong>Family history of cardiovascular disease (CVD)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_cvd" id="opt_fam_cvd_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_cvd" id="opt_fam_cvd_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <strong>Family history of diabetes mellitus (DM)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_diab" id="opt_fam_diab_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_diab" id="opt_fam_diab_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                      <strong>Family history of cardiomyopathy (CMP)</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_cmp" id="opt_fam_cmp_1" value="option1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="opt_fam_cmp" id="opt_fam_cmp_2" value="option2" checked>
+                          No
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <div class="tab-pane" id="tab_lifestyle">
+                    <div class="box-header">
+                      <h3 class="box-title"><b>Lifestyles / Habits</b></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <strong>Smoking</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.smoking" id="opt_smoke_1" value="option1" checked>
+                          Never smoked
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.smoking" id="opt_smoke_2" value="option2">
+                          Ex ( > 1 year)
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.smoking" id="opt_smoke_3" value="option2">
+                          Current smoker
+                        </label>
+                      </div>
+                      <strong>Alcohol</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.alcohol" id="opt_alcohol_1" value="option1" checked>
+                          Never
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.alcohol" id="opt_alcohol_2" value="option2">
+                          Mild ( < 1 units/day ) </label> </div> <div class="radio">
+                            <label>
+                              <input type="radio" name="lifestyle.alcohol" id="opt_alcohol_3" value="option2">
+                              Moderate ( 1 unit/day for female, 2 units/day for male)
+                            </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.alcohol" id="opt_alcohol_4" value="option2">
+                          High intake
+                        </label>
+                      </div>
+                      <strong>Physical exercise</strong>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.exercise" id="opt_exer_1" value="option1" checked>
+                          Never
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.exercise" id="opt_exer_2" value="option2">
+                          Sedentary
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.exercise" id="opt_exer_3" value="option2">
+                          Moderate
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="lifestyle.exercise" id="opt_exer_4" value="option2">
+                          Athlete
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div>
+              <!-- nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+
+            <table class="table table-bordered text-center">
+              <tr style="float:right;">
+                <th>
+                  <button type="button" class="btn btn-block btn-danger btn-lg bg-navy" style="width: min-content;"
+                    id="submit">Submit</button>
+                </th>
+              </tr>
+            </table>
+          </div>
+          <!-- /.row -->
+        </section>
+        <!-- /.content -->
+      </form>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <img src="Images/img3.png" alt="Logo image" align="right" width="20%">
+      </div>
+      <!-- Default to the left -->
+      <strong>KardiaSoft v0.1 &copy; 2019 <a href="http://www.kardiatool.eu/">KardiaTool</a>.</strong> All rights
+      reserved.
+    </footer>
+
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED JS SCRIPTS -->
+
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- DataTables -->
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+  <!-- InputMask -->
+  <script src="plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <!-- bootstrap datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- iCheck 1.0.1 -->
+  <script src="plugins/iCheck/icheck.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      var full_name = sessionStorage.getItem("username") + " " + sessionStorage.getItem("usersurname");
+      document.getElementById("username").innerHTML = full_name;
+      document.getElementById("person_name").innerHTML = full_name;
+      document.getElementById("role_id").innerHTML = sessionStorage.getItem("roleIdname");
+      document.getElementById("role_id_two").innerHTML = sessionStorage.getItem("roleIdname");
+      document.getElementById("username_two").innerHTML = full_name;
+
+
+      $('#sign_out').click(function () {
+        alert("Are you sure you want to sign out?");
+        localStorage.clear();
+        window.location = "index.html";
+      })
+      // to do remove
+      // localStorage.setItem("url", "http://147.102.33.125:8080");
+      // localStorage.setItem("token", "dd572cce15054e0991e5acccd315848b");
+
+      $('#datepicker').datepicker({
+        autoclose: true,
+        orientation: "auto bottom",
+        clearBtn: true,
+        format: "yyyy-mm-dd"
+      });
+
+      var url_visit_description = localStorage.getItem("url") + "/settings/visitDescription";
+      $.getJSON(url_visit_description, function (data) {
+        $(data.visitDescription).each(function (index, value) {
+          $('#opt_visit_description').append('<option>' + value + '</option>');
+        });
+      });
+
+      var url_study_sites = localStorage.getItem("url") + "/settings/healthcareCenters";
+      $.getJSON(url_study_sites, function (data) {
+        $(data.healthcareCenters).each(function (index, value) {
+          $('#opt_study_site').append('<option value="' + value.healthcareCenterId + '">' + value.name + '</option>');
+        });
+      });
+
+      var url_study_groups = localStorage.getItem("url") + "/settings/studyGroups";
+      $.getJSON(url_study_groups, function (data) {
+        $(data.studyGroups).each(function (index, value) {
+          $('#opt_study_group').append('<option value="' + value.studyGroupId + '">' + value.description + '</option>');
+        });
+      });
+
+      var url_aetiology = localStorage.getItem("url") + "/settings/aetiology";
+      $.getJSON(url_aetiology, function (data) {
+        $(data.aetiologies).each(function (index, value) {
+          $('#opt_aetiology').append('<option value="' + value.aetiologyId + '">' + value.description + '</option>');
+        });
+      });
+
+      var url_devices = localStorage.getItem("url") + "/settings/medicalDevices";
+      $.getJSON(url_devices, function (data) {
+        $(data.medicalDevices).each(function (index, value) {
+          $('#opt_device').append('<option value="' + value.medicalDeviceId + '">' + value.description + '</option>');
+        });
+      });
+
+      $('#opt_hf_1').on("click", function () {
+        $('#year_diagnosis').prop("disabled", false);
+      });
+
+      $('#opt_hf_2').on("click", function () {
+        $('#year_diagnosis').prop("disabled", true);
+        $('#year_diagnosis').val("");
+      });
+
+      $('#opt_hf_1').on("click", function () {
+        $('#efraction').prop("disabled", false);
+      });
+
+      $('#opt_hf_2').on("click", function () {
+        $('#efraction').prop("disabled", true);
+        $('#efraction').val("");
+      });
+
+      $('#opt_hf_1').on("click", function () {
+        $('#opt_aetiology').prop("disabled", false);
+      });
+
+      $('#opt_hf_2').on("click", function () {
+        $('#opt_aetiology').prop("disabled", true);
+        $('#opt_aetiology').val("");
+      });
+
+      $('#opt_hf_1').on("click", function () {
+        $('#opt_device').prop("disabled", false);
+      });
+
+      $('#opt_hf_2').on("click", function () {
+        $('#opt_device').prop("disabled", true);
+        $('#opt_device').val("");
+      });
+
+      $('#opt_mi_1').on("click", function () {
+        $('#textarea_mi').prop("disabled", false);
+      });
+
+      $('#opt_mi_2').on("click", function () {
+        $('#textarea_mi').prop("disabled", true);
+        $('#textarea_mi').val("");
+      });
+
+      $('#opt_cad_1').on("click", function () {
+        $('#textarea_cad').prop("disabled", false);
+      });
+
+      $('#opt_cad_2').on("click", function () {
+        $('#textarea_cad').prop("disabled", true);
+        $('#textarea_cad').val("");
+      });
+
+      $('#opt_cva_1').on("click", function () {
+        $('#textarea_cva').prop("disabled", false);
+      });
+
+      $('#opt_cva_2').on("click", function () {
+        $('#textarea_cva').prop("disabled", true);
+        $('#textarea_cva').val("");
+      });
+
+      $('#opt_pvd_1').on("click", function () {
+        $('#textarea_pvd').prop("disabled", false);
+      });
+
+      $('#opt_pvd_2').on("click", function () {
+        $('#textarea_pvd').prop("disabled", true);
+        $('#textarea_pvd').val("");
+      });
+
+      $('#opt_afib_1').on("click", function () {
+        $('#textarea_afib').prop("disabled", false);
+      });
+
+      $('#opt_afib_2').on("click", function () {
+        $('#textarea_afib').prop("disabled", true);
+        $('#textarea_afib').val("");
+      });
+
+      $('#opt_vhd_1').on("click", function () {
+        $('#textarea_vhd').prop("disabled", false);
+      });
+
+      $('#opt_vhd_2').on("click", function () {
+        $('#textarea_vhd').prop("disabled", true);
+        $('#textarea_vhd').val("");
+      });
+
+      $('#opt_ckd_1').on("click", function () {
+        $('#textarea_ckd').prop("disabled", false);
+      });
+
+      $('#opt_ckd_2').on("click", function () {
+        $('#textarea_ckd').prop("disabled", true);
+        $('#textarea_ckd').val("");
+      });
+
+      $('#opt_imm_1').on("click", function () {
+        $('#textarea_imm').prop("disabled", false);
+      });
+
+      $('#opt_imm_2').on("click", function () {
+        $('#textarea_imm').prop("disabled", true);
+        $('#textarea_imm').val("");
+      });
+
+      $('#opt_pul_1').on("click", function () {
+        $('#textarea_pul').prop("disabled", false);
+      });
+
+      $('#opt_pul_2').on("click", function () {
+        $('#textarea_pul').prop("disabled", true);
+        $('#textarea_pul').val("");
+      });
+
+      $('#opt_endo_1').on("click", function () {
+        $('#textarea_endo').prop("disabled", false);
+      });
+
+      $('#opt_endo_2').on("click", function () {
+        $('#textarea_endo').prop("disabled", true);
+        $('#textarea_endo').val("");
+      });
+
+      $('#opt_mal_1').on("click", function () {
+        $('#textarea_mal_1').prop("disabled", false);
+        $('#textarea_mal_2').prop("disabled", false);
+      });
+
+      $('#opt_mal_2').on("click", function () {
+        $('#textarea_mal_1').prop("disabled", true);
+        $('#textarea_mal_1').val("");
+        $('#textarea_mal_2').prop("disabled", true);
+        $('#textarea_mal_2').val("");
+      });
+
+      $('#opt_other_1').on("click", function () {
+        $('#textarea_other').prop("disabled", false);
+      });
+
+      $('#opt_other_2').on("click", function () {
+        $('#textarea_other').prop("disabled", true);
+        $('#textarea_other').val("");
+      });
+
+      // TO BE REMOVED
+      // FOR VIEW MODE
+      // localStorage.setItem("mode", "view");
+      // FOR EDIT MODE
+      // localStorage.setItem("mode", "edit");
+
+      var mode = localStorage.getItem("mode");
+      // TO BE REMOVED
+      console.log(mode);
+
+      if (mode == "edit") {
+        $("#baseline_visit :required").prop("disabled", false);
+        $('#submit').prop("disabled", true);
+        var patient_visit_string;
+
+        $("input, select").on('keyup keypress blur change', function () {
+          var empty = false;
+          $("input:required, select:required").each(function () {
+            if ($(this).val() == '') {
+              empty = true;
+            }
+          });
+          if (empty) {
+            $('#submit').prop("disabled", true);
+          }
+          else {
+            $('#submit').prop("disabled", false);
+          };
+
+          var patient_visit = new Object();
+          var address = new Object();
+          var lifestyle = new Object();
+          var patientCardiovascularHistory = new Array(19);
+          var visitDate = new Object();
+          address.street = document.getElementById("address.street").value;
+          address.streetNumber = document.getElementById("address.streetNumber").value;
+          address.town = document.getElementById("address.town").value;
+          patient_visit.address = JSON.stringify(address);
+          patient_visit.barcode = document.getElementById("barcode").value;
+          if (document.getElementById('opt_hf_1').checked) {
+            patient_visit.heartFailureDiagnosis = true;
+            patient_visit.diagnosisYear = document.getElementById("year_diagnosis").value;
+            patient_visit.ejectionFraction = document.getElementById("efraction").value;
+            patient_visit.aetiologyId = document.getElementById("opt_aetiology").value;
+            patient_visit.medicalDeviceId = document.getElementById("opt_device").value;
+          }
+          else {
+            patient_visit.heartFailureDiagnosis = false;
+          };
+          if (document.getElementById('opt_alcohol_1').checked) {
+            lifestyle.alcohol = "never"
+          }
+          else if (document.getElementById('opt_alcohol_2').checked) {
+            lifestyle.alcohol = "mild"
+          }
+          else if (document.getElementById('opt_alcohol_3').checked) {
+            lifestyle.alcohol = "moderate"
+          }
+          else {
+            lifestyle.alcohol = "high"
+          };
+          if (document.getElementById('opt_exer_1').checked) {
+            lifestyle.exercise = "never"
+          }
+          else if (document.getElementById('opt_exer_2').checked) {
+            lifestyle.exercise = "sedentary"
+          }
+          else if (document.getElementById('opt_exer_3').checked) {
+            lifestyle.exercise = "moderate"
+          }
+          else {
+            lifestyle.exercise = "athlete"
+          };
+          if (document.getElementById('opt_smoke_1').checked) {
+            lifestyle.smoking = "never"
+          }
+          else if (document.getElementById('opt_smoke_2').checked) {
+            lifestyle.smoking = "ex"
+          }
+          else {
+            lifestyle.smoking = "current"
+          };
+          patient_visit.lifestyle = JSON.stringify(lifestyle);
+          patient_visit.name = document.getElementById("name").value;
+
+          patientCardiovascularHistory[0] = JSON.stringify({
+            "notes": document.getElementById("textarea_mi").value,
+            "patientHistoryComponentId": 1,
+            "value": function () {
+              if (document.getElementById('opt_cad_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          });
+
+          patientCardiovascularHistory[1] = {
+            "notes": document.getElementById("textarea_cad").value,
+            "patientHistoryComponentId": 2,
+            "value": function () {
+              if (document.getElementById('opt_mi_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[2] = {
+            "notes": document.getElementById("textarea_cva").value,
+            "patientHistoryComponentId": 3,
+            "value": function () {
+              if (document.getElementById('opt_cva_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[3] = {
+            "notes": document.getElementById("textarea_pvd").value,
+            "patientHistoryComponentId": 4,
+            "value": function () {
+              if (document.getElementById('opt_pvd_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[4] = {
+            "notes": document.getElementById("textarea_afib").value,
+            "patientHistoryComponentId": 5,
+            "value": function () {
+              if (document.getElementById('opt_afib_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[5] = {
+            "notes": document.getElementById("textarea_vhd").value,
+            "patientHistoryComponentId": 6,
+            "value": function () {
+              if (document.getElementById('opt_vhd_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[6] = {
+            "notes": "",
+            "patientHistoryComponentId": 7,
+            "value": function () {
+              if (document.getElementById('opt_hyp_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[7] = {
+            "notes": "",
+            "patientHistoryComponentId": 8,
+            "value": function () {
+              if (document.getElementById('opt_chol_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[8] = {
+            "notes": "",
+            "patientHistoryComponentId": 9,
+            "value": function () {
+              if (document.getElementById('opt_diab_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[9] = {
+            "notes": "",
+            "patientHistoryComponentId": 10,
+            "value": function () {
+              if (document.getElementById('opt_ob_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[10] = {
+            "notes": document.getElementById("textarea_ckd").value,
+            "patientHistoryComponentId": 11,
+            "value": function () {
+              if (document.getElementById('opt_ckd_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[11] = {
+            "notes": document.getElementById("textarea_imm").value,
+            "patientHistoryComponentId": 12,
+            "value": function () {
+              if (document.getElementById('opt_imm_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[12] = {
+            "notes": document.getElementById("textarea_pul").value,
+            "patientHistoryComponentId": 13,
+            "value": function () {
+              if (document.getElementById('opt_pul_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[13] = {
+            "notes": document.getElementById("textarea_endo").value,
+            "patientHistoryComponentId": 14,
+            "value": function () {
+              if (document.getElementById('opt_endo_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[14] = {
+            "notes": document.getElementById("textarea_mal_1").value + "||" + document.getElementById("textarea_mal_2").value,
+            "patientHistoryComponentId": 15,
+            "value": function () {
+              if (document.getElementById('opt_mal_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[15] = {
+            "notes": document.getElementById("textarea_other").value,
+            "patientHistoryComponentId": 16,
+            "value": function () {
+              if (document.getElementById('opt_other_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[16] = {
+            "notes": "",
+            "patientHistoryComponentId": 17,
+            "value": function () {
+              if (document.getElementById('opt_fam_cvd_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[17] = {
+            "notes": "",
+            "patientHistoryComponentId": 18,
+            "value": function () {
+              if (document.getElementById('opt_fam_diab_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          patientCardiovascularHistory[18] = {
+            "notes": "",
+            "patientHistoryComponentId": 19,
+            "value": function () {
+              if (document.getElementById('opt_fam_cmp_1').checked) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          };
+
+          console.log(patientCardiovascularHistory[0]);
+          patient_visit.patientCardiovascularHistory = JSON.stringify(patientCardiovascularHistory);
+          patient_visit.studygroupId = document.getElementById("opt_study_group").value;
+          patient_visit.surname = document.getElementById("surname").value;
+          patient_visit.telephoneNumber = document.getElementById("telephoneNumber").value;
+          patient_visit.visitDate = document.getElementById("datepicker").value;
+
+          patient_visit_string = JSON.stringify(patient_visit);
+
+          console.log("DATA " + patient_visit_string + " DATA");
+        });
+      }
+      else {
+        $("#baseline_visit :input").prop("disabled", true);
+
+        $.ajax({
+          type: "GET",
+          dataType: "json",
+          contentType: "application/json",
+          url: localStorage.getItem("url") + "/operator/baselineVisit?patientId=" + localStorage.getItem("patient_id"),
+          headers: { "token": sessionStorage.getItem("token") },
+          success: function (data) {
+            $("#datepicker").val(data.baselineVisit.visitDate);
+            $("#barcode").val(data.baselineVisit.barcode);
+            $("#name").val(data.baselineVisit.name);
+            $("#surname").val(data.baselineVisit.surname);
+            $("#address.street").val(data.baselineVisit.address.street);
+            $("#address.streetNumber").val(data.baselineVisit.address.streetNumber);
+            $("#address.town").val(data.baselineVisit.address.town);
+            $("#telephoneNumber").val(data.baselineVisit.telephoneNumber);
+            $("#opt_study_group").val(data.baselineVisit.studygroupId);
+            if (data.baselineVisit.heartFailureDiagnosis) {
+              $("#opt_hf_1").attr("checked", "checked");
+              $("#year_diagnosis").val(data.baselineVisit.diagnosisYear);
+              $("#efraction").val(data.baselineVisit.ejectionFraction);
+              $("#opt_aetiology").val(data.baselineVisit.aetiologyId);
+              $("#opt_device").val(data.baselineVisit.medicalDeviceId);
+            }
+            else {
+              $("#opt_hf_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[0].value == "true") {
+              $("#opt_mi_1").attr("checked", "checked");
+              $("#textarea_mi").val(data.baselineVisit.patientCardiovascularHistory[0].notes);
+            }
+            else {
+              $("#opt_mi_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[1].value == "true") {
+              $("#opt_cad_1").attr("checked", "checked");
+              $("#textarea_cad").val(data.baselineVisit.patientCardiovascularHistory[1].notes);
+            }
+            else {
+              $("#opt_cad_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[2].value == "true") {
+              $("#opt_cva_1").attr("checked", "checked");
+              $("#textarea_cva").val(data.baselineVisit.patientCardiovascularHistory[2].notes);
+            }
+            else {
+              $("#opt_cva_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[3].value == "true") {
+              $("#opt_pvd_1").attr("checked", "checked");
+              $("#textarea_pvd").val(data.baselineVisit.patientCardiovascularHistory[3].notes);
+            }
+            else {
+              $("#opt_pvd_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[4].value == "true") {
+              $("#opt_afib_1").attr("checked", "checked");
+              $("#textarea_afib").val(data.baselineVisit.patientCardiovascularHistory[4].notes);
+            }
+            else {
+              $("#opt_afib_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[5].value == "true") {
+              $("#opt_vhd_1").attr("checked", "checked");
+              $("#textarea_vhd").val(data.baselineVisit.patientCardiovascularHistory[5].notes);
+            }
+            else {
+              $("#opt_vhd_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[6].value == "true") {
+              $("#opt_hyp_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_hyp_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[7].value == "true") {
+              $("#opt_chol_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_chol_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[8].value == "true") {
+              $("#opt_diab_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_diab_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[9].value == "true") {
+              $("#opt_ob_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_ob_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[10].value == "true") {
+              $("#opt_ckd_1").attr("checked", "checked");
+              $("#textarea_ckd").val(data.baselineVisit.patientCardiovascularHistory[10].notes);
+            }
+            else {
+              $("#opt_ckd_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[11].value == "true") {
+              $("#opt_imm_1").attr("checked", "checked");
+              $("#textarea_imm").val(data.baselineVisit.patientCardiovascularHistory[11].notes);
+            }
+            else {
+              $("#opt_imm_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[12].value == "true") {
+              $("#opt_pul_1").attr("checked", "checked");
+              $("#textarea_pul").val(data.baselineVisit.patientCardiovascularHistory[12].notes);
+            }
+            else {
+              $("#opt_pul_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[13].value == "true") {
+              $("#opt_endo_1").attr("checked", "checked");
+              $("#textarea_endo").val(data.baselineVisit.patientCardiovascularHistory[13].notes);
+            }
+            else {
+              $("#opt_endo_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[14].value == "true") {
+              $("#opt_mal_1").attr("checked", "checked");
+              var fields = data.baselineVisit.patientCardiovascularHistory[14].notes.split('||');
+              $("#textarea_mal_1").val(fields[0]);
+              $("#textarea_mal_2").val(fields[1]);
+            }
+            else {
+              $("#opt_mal_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[15].value == "true") {
+              $("#opt_other_1").attr("checked", "checked");
+              $("#textarea_other").val(data.baselineVisit.patientCardiovascularHistory[15].notes);
+            }
+            else {
+              $("#opt_other_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[16].value == "true") {
+              $("#opt_fam_cvd_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_fam_cvd_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[17].value == "true") {
+              $("#opt_fam_diab_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_fam_diab_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.patientCardiovascularHistory[18].value == "true") {
+              $("#opt_fam_cmp_1").attr("checked", "checked");
+            }
+            else {
+              $("#opt_fam_cmp_2").val("checked", "checked");
+            };
+            if (data.baselineVisit.lifestyle.alcohol == "never") {
+              $("#opt_alcohol_1").val("checked", "checked");
+            }
+            else if (data.baselineVisit.lifestyle.alcohol == "mild") {
+              $("#opt_alcohol_2").val("checked", "checked");
+            }
+            else if (data.baselineVisit.lifestyle.alcohol == "moderate") {
+              $("#opt_alcohol_3").val("checked", "checked");
+            }
+            else {
+              $("#opt_alcohol_4").val("checked", "checked");
+            };
+            if (data.baselineVisit.lifestyle.exercise == "never") {
+              $("#opt_exer_1").val("checked", "checked");
+            }
+            else if (data.baselineVisit.lifestyle.exercise == "sedentary") {
+              $("#opt_exer_2").val("checked", "checked");
+            }
+            else if (data.baselineVisit.lifestyle.exercise == "moderate") {
+              $("#opt_exer_3").val("checked", "checked");
+            }
+            else {
+              $("#opt_exer_4").val("checked", "checked");
+            };
+            if (data.baselineVisit.lifestyle.smoking == "never") {
+              $("#opt_smoke_1").val("checked", "checked");
+            }
+            else if (data.baselineVisit.lifestyle.smoking == "ex") {
+              $("#opt_smoke_2").val("checked", "checked");
+            }
+            else {
+              $("#opt_smoke_3").val("checked", "checked");
+            };
+            alert("The visit has benn successfully loaded.");
+          },
+          error: function () {
+            alert("There was a problem retrieving data from the database.");
+          }
+        });
+
+
+
+
+      };
+
+      $('body').on('click', '#submit', function () {
+        $.ajax({
+          url: localStorage.getItem("url") + "/operator/baselineVisit",
+          dataType: 'json',
+          type: 'POST',
+          contentType: 'application/json',
+          data: patient_visit_string,
+          headers: { "token": localStorage.getItem("token") },
+          statusCode: {
+            200: function (result) {
+              alert('200');
+              $(function () { window.location.assign("patient_data_list_visits.html") });
+            },
+            201: function (result) {
+              alert('201');
+              $(function () { window.location.assign("patient_data_list_visits.html") });
+            },
+            400: function (result) {
+              alert('400');
+              location.reload(true);
+            },
+            404: function (result) {
+              alert('404');
+              location.reload(true);
+            },
+            500: function (result) {
+              alert('500');
+              location.reload(true);
+            }
+          },
+          success: function () {
+            alert('The baseline visit has been successfully added!');
+          }
+        });
+      });
+
+
+    });
+
+  </script>
+
+</body>
+
+</html>

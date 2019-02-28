@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KardiaSoft | Starter</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="dist/css/skins/skin-red.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+
+<body class="hold-transition skin-red sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        <header class="main-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>K</b>S</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"> <img src="Images/img2_2.png" alt="Logo image" display="block" margin="auto"
+                        width="170vw"></span>
+            </div>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="Images/doctor.png" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs" id="person_name"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="Images/doctor.png" class="img-circle" alt="User Image">
+                                    <p id="username"></p>
+                                    <p id="role_id">
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div style="text-align: center;">
+                                        <a href="#" class="btn btn-default btn-flat" id="sign_out">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="Images/doctor.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p id="username_two">Alexander</p>
+                        <p id="role_id_two">
+                            <small>Doctor</small>
+                    </div>
+                </div>
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li><a href="main.html"><i class="fa fa-home"></i> <span>Home Page </span></a></li>
+                    <li class="active"><a href="patient_data_list_patients.html"><i class="fa fa-users"></i>
+                            <span>Patient Data
+                                Management</span></a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart-o"></i> <span>Patient Information Visualization</span></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-support"></i> <span>Clinical Decision Support</span></a></li>
+                    <li><a href="#"><i class="fa fa-tint"></i> <span>Unassigned Measurements</span></a></li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>Patient Data Management
+                    <small>List of all existing patients</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="main.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Patient Data Management</li>
+                </ol>
+            </section>
+
+            <form>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Custom Tabs -->
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs">
+                                    <li><a data-toggle="tab" href="#tab_baseline_visit">Baseline visit</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#tab_visit">Visit details</a></li>
+                                    <li><a data-toggle="tab" href="#tab_symptoms">Symptoms</a></li>
+                                    <li><a data-toggle="tab" href="#tab_examination">Physical examination</a></li>
+                                    <li><a data-toggle="tab" href="#tab_exercise">Exercise tolerance</a></li>
+                                    <li><a data-toggle="tab" href="#tab_medications">Medications</a></li>
+                                    <li><a data-toggle="tab" href="#tab_vaccinations">Vaccinations</a></li>
+                                    <li><a data-toggle="tab" href="#tab_allergies">Allergies</a></li>
+                                    <li><a data-toggle="tab" href="#tab_laboratory">Laboratory findings</a></li>
+                                    <li><a data-toggle="tab" href="#tab_echo">Echocardiogram</a></li>
+                                    <li><a data-toggle="tab" href="#tab_follow_up">Clinical Information at follow up</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab_baseline_visit">
+                                        <div class="nav-tabs-custom">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a data-toggle="tab" href="#tab_user">Patient
+                                                        details</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#tab_demographic">Demographic
+                                                        variables</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#tab_cvd_history">History of CVD</a></li>
+                                                <li><a data-toggle="tab" href="#tab_risk_factors">Classical CV risk
+                                                        factors</a></li>
+                                                <li><a data-toggle="tab" href="#tab_other">Other conditions</a></li>
+                                                <li><a data-toggle="tab" href="#tab_family_history">Family history</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#tab_lifestyle">Lifestyle/Habits</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab_user">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Patient details</b></h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label>Visit date</label>
+                                                            <div class="input-group date">
+                                                                <div class="input-group-addon">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </div>
+                                                                <input class="form-control pull-right" id="datepicker"
+                                                                    type="text">
+                                                            </div>
+                                                            <!-- /.input group -->
+                                                        </div>
+                                                        <!-- /.form group -->
+                                                        <div class="form-group">
+                                                            <label>Visit description</label>
+                                                            <select class="form-control"
+                                                                id="opt_baseline_visit_description">
+                                                                <option value="">-- Select --</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Barcode</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Patient First Name</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Patient Last Name</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Address - Street</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Address - Number</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Adress - Town/City</label>
+                                                            <input class="form-control" placeholder="Enter ..."
+                                                                type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Telephone</label>
+                                                            <input class="form-control" placeholder="+301234567890"
+                                                                type="text">
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <!-- /.tab-pane -->
+                                                <div class="tab-pane" id="tab_demographic">
+                                                    <div class="box-header with-border">
+                                                        <h3 class="box-title"><b>General demographic variables</b></h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <form role="form">
+                                                            <div class="form-group">
+                                                                <label>Study site</label>
+                                                                <select class="form-control" id="opt_study_site">
+                                                                    <option value="">-- Select --</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Study group</label>
+                                                                <select class="form-control" id="opt_study_group">
+                                                                    <option value="">-- Select --</option>
+                                                                </select>
+                                                            </div>
+                                                            <strong>Diagnosis of the heart failure</strong>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input id="opt_hf_1" name="opt_hf" type="radio"
+                                                                        value="option1">
+                                                                    Yes
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input checked id="opt_hf_2" name="opt_hf"
+                                                                        type="radio" value="option2">
+                                                                    No
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Year of diagnosis</label>
+                                                                <input class="form-control" disabled id="year_diagnosis"
+                                                                    placeholder="YYYY" type="text">
+                                                            </div>
+                                                            <label>Ejection Fraction (at the time of diagnosis)</label>
+                                                            <div class="input-group">
+                                                                <input class="form-control" disabled id="efraction"
+                                                                    type="text">
+                                                                <span class="input-group-addon">%</span>
+                                                            </div>
+                                                            <br>
+                                                            <div class="form-group">
+                                                                <label>Aetiology</label>
+                                                                <textarea class="form-control" disabled id="aetiology"
+                                                                    placeholder="Enter ..." rows="3"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Device</label>
+                                                                <select class="form-control" id="opt_device">
+                                                                    <option value="">-- Select --</option>
+                                                                </select>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <!-- /.tab-pane -->
+                                                <div class="tab-pane" id="tab_cvd_history">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Personal history of cardiovascular
+                                                                disease
+                                                                (CVD)</b></h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <strong>History of myocardial infraction</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_mi_1" name="opt_mi" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_mi_2" name="opt_mi" type="radio"
+                                                                    value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_mi"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Coronary artery disease (CAD) (confirmed by angiography
+                                                            only)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_cad_1" name="opt_cad" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_cad_2" name="opt_cad"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_cad"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>History of cerebrovascular accident (CVA) or transient
+                                                            ischemic attack
+                                                            (TIA)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_cva_1" name="opt_cva" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_cva_2" name="opt_cva"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_cva"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Peripheral vascular disease (any site)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_pvd_1" name="opt_pvd" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_pvd_2" name="opt_pvd"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_pvd"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Paroxysmal atrial fibrillation</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_afib_1" name="opt_afib" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_afib_2" name="opt_afib"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_afib"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Valvular heart disease (moderate or severe)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_vhd_1" name="opt_vhd" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_vhd_2" name="opt_vhd"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_vhd"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <div class="tab-pane" id="tab_risk_factors">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Classical cardiovascular risk
+                                                                factors</b>
+                                                        </h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <strong>Hypertension</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_hyp_1" name="opt_hyp" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_hyp_2" name="opt_hyp"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <strong>Hypercholesterolemia</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_chol_1" name="opt_chol" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_chol_2" name="opt_chol"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <strong>Diabetes melitus</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_diab_1" name="opt_diab" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_diab_2" name="opt_diab"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <div class="tab-pane" id="tab_other">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Other chronic medical conditions</b>
+                                                        </h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <strong>Obesity</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_ob_1" name="opt_ob" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_ob_2" name="opt_ob" type="radio"
+                                                                    value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <strong>Chronic kidney disease (CKD)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_ckd_1" name="opt_ckd" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_ckd_2" name="opt_ckd"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_ckd"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Autoimmune disease</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_imm_1" name="opt_imm" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_imm_2" name="opt_imm"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_imm"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Pulmonary disease</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_pul_1" name="opt_pul" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_pul_2" name="opt_pul"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_pul"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Endocrine disease</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_endo_1" name="opt_endo" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_endo_2" name="opt_endo"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_endo"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Malignancies</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_mal_1" name="opt_mal" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_mal_2" name="opt_mal"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_mal_1"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify treatments</label>
+                                                            <textarea class="form-control" disabled id="textarea_mal_2"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                        <strong>Other</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_other_1" name="opt_other" type="radio"
+                                                                    value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_other_2" name="opt_other"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>If yes, specify</label>
+                                                            <textarea class="form-control" disabled id="textarea_other"
+                                                                placeholder="Enter ..." rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <div class="tab-pane" id="tab_family_history">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Family history</b></h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <strong>Family history of cardiovascular disease (CVD)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_fam_cvd_1" name="opt_fam_cvd"
+                                                                    type="radio" value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_fam_cvd_2" name="opt_fam_cvd"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <strong>Family history of diabetes mellitus (DM)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_fam_diab_1" name="opt_fam_diab"
+                                                                    type="radio" value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_fam_diab_2" name="opt_fam_diab"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                        <strong>Family history of cardiomyopathy (CMP)</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_fam_cmp_1" name="opt_fam_cmp"
+                                                                    type="radio" value="option1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_fam_cmp_2" name="opt_fam_cmp"
+                                                                    type="radio" value="option2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <div class="tab-pane" id="tab_lifestyle">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title"><b>Lifestyles / Habits</b></h3>
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <strong>Smoking</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_smoke_1" name="opt_smoke"
+                                                                    type="radio" value="option1">
+                                                                Never smoked
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_smoke_2" name="opt_smoke" type="radio"
+                                                                    value="option2">
+                                                                Ex ( > 1 year)
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_smoke_3" name="opt_smoke" type="radio"
+                                                                    value="option2">
+                                                                Current smoker
+                                                            </label>
+                                                        </div>
+                                                        <strong>Alcohol</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_alcohol_1" name="opt_alcohol"
+                                                                    type="radio" value="option1">
+                                                                Never
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_alcohol_2" name="opt_alcohol"
+                                                                    type="radio" value="option2">
+                                                                Mild ( < 1 units/day ) </label> </div> <div
+                                                                    class="radio">
+                                                                    <label>
+                                                                        <input id="opt_alcohol_3" name="opt_alcohol"
+                                                                            type="radio" value="option2">
+                                                                        Moderate ( 1 unit/day for female, 2 units/day
+                                                                        for male)
+                                                                    </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_alcohol_3" name="opt_alcohol"
+                                                                    type="radio" value="option2">
+                                                                High intake
+                                                            </label>
+                                                        </div>
+                                                        <strong>Physical exercise</strong>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input checked id="opt_exer_1" name="opt_exer"
+                                                                    type="radio" value="option1">
+                                                                Never
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_exer_2" name="opt_exer" type="radio"
+                                                                    value="option2">
+                                                                Sedentary
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_exer_3" name="opt_exer" type="radio"
+                                                                    value="option2">
+                                                                Moderate
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input id="opt_exer_4" name="opt_exer" type="radio"
+                                                                    value="option2">
+                                                                Athlete
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
+                                                <!-- /.tab-pane -->
+                                            </div>
+                                            <!-- /.tab-content -->
+                                        </div>
+                                        <!-- nav-tabs-custom -->
+                                    </div>
+
+                                    <div class="tab-pane active" id="tab_visit">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Visit details</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label>Date of current visit</label>
+                                                <div class="input-group date">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </div>
+                                                    <input class="form-control pull-right" id="datepicker_two"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Visit description</label>
+                                                <select class="form-control" id="opt_visit_description" required>
+                                                    <option value="">-- Select --</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Date of last visit</label>
+                                                <input class="form-control" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_symptoms">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Symptoms</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label>New York Heart Association (NYHA) class</label>
+                                                <select class="form-control" id="nyha">
+                                                    <option value="">-- Select --</option>
+                                            </div>
+                                            <strong>Dyspnea</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_dyspnea_1" name="opt_dyspnea" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_dyspnea_2" name="opt_dyspnea" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Orthopnea</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_orthopnea_1" name="opt_orthopnea" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_orthopnea_2" name="opt_orthopnea"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Paroxysmal nocturnal dyspnea (PND)</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_pnd_1" name="opt_pnd" type="radio" value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_pnd_2" name="opt_pnd" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Reduced exercise tolerance</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_tolerance_1" name="opt_tolerance" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_tolerance_2" name="opt_tolerance"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Cough</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_cough_1" name="opt_cough" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_cough_2" name="opt_cough" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Chest pain on exertion</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_chest_pain_1" name="opt_chest_pain" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_chest_pain_2" name="opt_chest_pain"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Other symptoms</label>
+                                                <textarea class="form-control" id="textarea_symptoms"
+                                                    placeholder="Describe ..." rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_examination">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title"><b>Physical examination</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <form role="form">
+                                                <!-- text input -->
+                                                <label>Systolic blood pressure</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="sbp" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">mmHg</span>
+                                                </div>
+                                                <br>
+                                                <label>Diastolic blood pressure</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="dbp" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">mmHg</span>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>ECG rhythm</label>
+                                                    <select class="form-control" id="ecg_rhythm">
+                                                        <option>-- Select --</option>
+                                                        <option>Sinus rhythm</option>
+                                                        <option>Atrial fibrillation</option>
+                                                        <option>Flutter</option>
+                                                    </select>
+                                                </div>
+                                                <label>Heart rate</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="hr" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">bpm</span>
+                                                </div>
+                                                <br>
+                                                <label>QRS duration on ECG</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="qrs" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">msec</span>
+                                                </div>
+                                                <br>
+                                                <label>Respiratory rate</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="respiratory" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">bpm</span>
+                                                </div>
+                                                <br>
+                                                <label>Oxygen saturation</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="oxygen" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">%</span>
+                                                </div>
+                                                <br>
+                                                <label>Height</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="height" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">cm</span>
+                                                </div>
+                                                <br>
+                                                <label>Weight</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="weight" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">kg</span>
+                                                </div>
+                                                <br>
+                                                <label>Body mass index (BMI)</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="bmi" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">kg/m2</span>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Murmurs</label>
+                                                    <select class="form-control" id="murmurs">
+                                                        <option>-- Select --</option>
+                                                        <option>No</option>
+                                                        <option>MR</option>
+                                                        <option>TR</option>
+                                                        <option>AS</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Crackles</label>
+                                                    <select class="form-control" id="crackles">
+                                                        <option>-- Select --</option>
+                                                        <option>No</option>
+                                                        <option>only base</option>
+                                                        <option>above base</option>
+                                                    </select>
+                                                </div>
+                                                <strong>S3 sound</strong>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input id="opt_s3_sound_1" name="opt_s3_sound" type="radio"
+                                                            value="option1">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input checked id="opt_s3_sound_2" name="opt_s3_sound"
+                                                            type="radio" value="option2">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Oedemas</label>
+                                                    <select class="form-control" id="oedemas">
+                                                        <option>-- Select --</option>
+                                                        <option>No</option>
+                                                        <option>Mild</option>
+                                                        <option>Moderate</option>
+                                                    </select>
+                                                </div>
+                                                <label>Jugular vein distention (JVD)</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="jvd" placeholder="Enter ..."
+                                                        type="text">
+                                                    <span class="input-group-addon">cm</span>
+                                                </div>
+                                                <br>
+                                                <label>Hepatomegaly</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" id="hepatomegaly"
+                                                        placeholder="Enter ..." type="text">
+                                                    <span class="input-group-addon">cm</span>
+                                                </div>
+                                                <br>
+                                                <strong>Cachexia</strong>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input id="opt_cachexia_1" name="opt_cachexia" type="radio"
+                                                            value="option1">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input checked id="opt_cachexia_2" name="opt_cachexia"
+                                                            type="radio" value="option2">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Other findings</label>
+                                                    <textarea class="form-control" id="textarea_findings"
+                                                        placeholder="Enter ..." rows="3"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_exercise">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Exercise tolerance</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <label>Distance covered</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="distance" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">meters</span>
+                                            </div>
+                                            <br>
+                                            <label>Heart rate (HR) response</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="hr_res" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">bpm</span>
+                                            </div>
+                                            <br>
+                                            <label>Systolic blood pressure (SBP) responce</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="sbp_res" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mmHg</span>
+                                            </div>
+                                            <br>
+                                            <label>Diastolic blood pressure (DBP) responce</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="dbp_res" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mmHg</span>
+                                            </div>
+                                            <br>
+                                            <label>Oxygen saturation responce</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="oxygen_res" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <div class="tab-pane" id="tab_medications">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Medications</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label>Angiotensin-converting-enzyme (ACE) inhibitor</label>
+                                                <select class="form-control" id="ace">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>Maximal</option>
+                                                    <option>Submaximal</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Angiotensin II receptor blocker (ARB)</label>
+                                                <select class="form-control" id="arb">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>Maximal</option>
+                                                    <option>Submaximal</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Angiotensin receptor-neprilysin inhibitor (ARNi)</label>
+                                                <select class="form-control" id="arni">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>Maximal</option>
+                                                    <option>Submaximal</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Beta blocker</label>
+                                                <select class="form-control" id="betablocker">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>Maximal</option>
+                                                    <option>Submaximal</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mineralocorticoid receptor antagonist (MRA)</label>
+                                                <select class="form-control" id="mra">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>Maximal</option>
+                                                    <option>Submaximal</option>
+                                                </select>
+                                            </div>
+                                            <strong>Loop diuretic</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_diuretic_1" name="opt_diuretic" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_diuretic_2" name="opt_diuretic" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <label>If yes, specify dose total</label>
+                                            <div class="input-group">
+                                                <input class="form-control" disabled id="diuretic_dosage"
+                                                    placeholder="Enter ..." type="text">
+                                                <span class="input-group-addon">mg</span>
+                                            </div>
+                                            <br>
+                                            <strong>Thiazide diuretic</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_thi_diuretic_1" name="opt_thi_diuretic" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_thi_diuretic_2" name="opt_thi_diuretic"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Ivabradine</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_ivabradine_1" name="opt_ivabradine" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_ivabradine_2" name="opt_ivabradine"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Antiplatelet</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_antiplatelet_1" name="opt_antiplatelet" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_antiplatelet_2" name="opt_antiplatelet"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Anticoagulant</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_anticoagulant_1" name="opt_anticoagulant"
+                                                        type="radio" value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_anticoagulant_2" name="opt_anticoagulant"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Statin</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_statin_1" name="opt_statin" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_statin_2" name="opt_statin" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Calcium channel blocker (CCB)</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_ccb_1" name="opt_ccb" type="radio" value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_ccb_2" name="opt_ccb" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Amiodarone</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_amiodarone_1" name="opt_amiodarone" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_amiodarone_2" name="opt_amiodarone"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Digoxin</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_digoxin_1" name="opt_digoxin" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_digoxin_2" name="opt_digoxin" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Alpha blockers</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_ablockers_1" name="opt_ablockers" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_ablockers_2" name="opt_ablockers"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <strong>Other medications</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_other_med_1" name="opt_other_med" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_other_med_2" name="opt_other_med"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>If yes, specify</label>
+                                                <textarea class="form-control" disabled id="textarea_medications"
+                                                    placeholder="Enter ..." rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <div class="tab-pane" id="tab_vaccinations">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Vaccinations</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label>Influenza vaccine (in last 12 months)</label>
+                                                <select class="form-control" id="influence">
+                                                    <option value="">-- Select --</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Pneumococcal vaccine (ever)</label>
+                                                <select class="form-control" id="pneumococcal">
+                                                    <option value="">-- Select --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <div class="tab-pane" id="tab_allergies">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Allergies</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <strong>Allergies</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_allergies_1" name="opt_allergies" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_allergies_2" name="opt_allergies"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>If yes, specify</label>
+                                                <textarea class="form-control" disabled id="textarea_allergies"
+                                                    placeholder="Enter ..." rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <div class="tab-pane" id="tab_laboratory">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Laboratory findings</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <label>Full blood count (including Hemoglobin - Hb)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="hemoglobin" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">g/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Full blood count (including White Blood Cell - WBC)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="wbc" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">/μl</span>
+                                            </div>
+                                            <br>
+                                            <label>NT-proBNP</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="nt_bnp" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">pg/ml</span>
+                                            </div>
+                                            <br>
+                                            <label>Urea</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="urea" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Creatinine</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="creatinine" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Sodium</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="sodium" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mmol/L</span>
+                                            </div>
+                                            <br>
+                                            <label>Potassium</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="potassium" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mmol/L</span>
+                                            </div>
+                                            <br>
+                                            <label>eGFR</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="egfr" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mml/min/1.73m2</span>
+                                            </div>
+                                            <br>
+                                            <label>Aspartate Aminotransferase (AST/GOT)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ast" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">IU/l</span>
+                                            </div>
+                                            <br>
+                                            <label>Alanine Aminotransferase (ALT/SGPT)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="alt" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">IU/l</span>
+                                            </div>
+                                            <br>
+                                            <label>Tbil</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="tbil" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Dbil</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="dbil" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Total cholesterol</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="total_chol" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>High-density lipoprotein (HDL)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="hdl" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Low-density lipoprotein (LDL)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ldl" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Triglycerides</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="triglycerides" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Fasting glucose</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="fglucose" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Fe</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="fe" placeholder="Enter ..." type="text">
+                                                <span class="input-group-addon">μg/dl</span>
+                                            </div>
+                                            <br>
+                                            <label>Ferritin</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ferritin" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">ng/ml</span>
+                                            </div>
+                                            <br>
+                                            <label>TSH</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="tsh" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">μIU/ml</span>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_echo">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Echocardiogram</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <label>Ejection fraction (EF)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ef" placeholder="Enter ..." type="text">
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                            <br>
+                                            <label>Left Ventricular End Diastolic Diameter (LVEDD)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="lvedd" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <label>Left Ventricular end Systolic Dimension (LVSD)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="lvsd" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <label>Posterior wall thickness (PWd)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="pwd" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <label>Relative wall thickness (RWT)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="rwt" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">-</span>
+                                            </div>
+                                            <br>
+                                            <label>Left ventricular (LV) mass</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="lv_mass" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">gr</span>
+                                            </div>
+                                            <br>
+                                            <strong>Left Ventricular Hypertrophy (LVH)</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_lvh_1" name="opt_lvh" type="radio" value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_lvh_2" name="opt_lvh" type="radio"
+                                                        value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <label>Left atrial size: LA diameter (PLAX)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="plax" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <label>Left atrial size: LAVI (average 4ch & 2ch)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="lavi" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">ml/m2</span>
+                                            </div>
+                                            <br>
+                                            <label>Mitral inflow velocity (E)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="velocity" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">cm/s</span>
+                                            </div>
+                                            <br>
+                                            <label>E/A ratio</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="e/a" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">-</span>
+                                            </div>
+                                            <br>
+                                            <label>E/E' ratio</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="e/e'" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">-</span>
+                                            </div>
+                                            <br>
+                                            <label>Maximal tricuspid regurgitation velocity (TR Vmax)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="tr_vmax" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">cm/s</span>
+                                            </div>
+                                            <br>
+                                            <label>Inferior vena cava (IVC) - rest</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ivc_rest" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <label>Inferior vena cava (IVC) - inspiration</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="ivc_ins" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">mm</span>
+                                            </div>
+                                            <br>
+                                            <strong>Significant valvulopathies</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_valvulopathies_1" name="opt_valvulopathies"
+                                                        type="radio" value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_valvulopathies_2" name="opt_valvulopathies"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mitral regurgitation (MR) grade</label>
+                                                <select class="form-control" id="mr_grade">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mitral Stenosis (MS) grade</label>
+                                                <select class="form-control" id="ms_grade">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Aortic stenosis (AS) grade</label>
+                                                <select class="form-control" id="as_grade">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Aortic regurgitation (AR) grade</label>
+                                                <select class="form-control" id="ar_grade">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tricuspid regurgitation (TR) grade</label>
+                                                <select class="form-control" id="tr_grade">
+                                                    <option>-- Select --</option>
+                                                    <option>No</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <label>Left ventricular mass index (LVMI)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="lvmi" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">g/m2</span>
+                                            </div>
+                                            <br>
+                                            <label>Body surface area (BSA)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="bsa" placeholder="Enter ..."
+                                                    type="text">
+                                                <span class="input-group-addon">m2</span>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_follow_up">
+                                        <div class="box-header">
+                                            <h3 class="box-title"><b>Clinical information at follow up visit</b></h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <strong>Any hospital admissions since last visit?</strong>
+                                            <div class="radio">
+                                                <label>
+                                                    <input id="opt_follow_up_1" name="opt_follow_up" type="radio"
+                                                        value="option1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input checked id="opt_follow_up_2" name="opt_follow_up"
+                                                        type="radio" value="option2">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label>If yes, categorize reason</label>
+                                                    <select class="form-control" disabled id="multiple_follow_up">
+                                                        <option value="">-- Select --</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                    </div>
+                                    <!-- /.tab-content -->
+                                </div>
+                                <!-- nav-tabs-custom -->
+                            </div>
+                            <!-- /.col -->
+
+                            <table class="table table-bordered text-center">
+                                <tr style="float:right;">
+                                    <th>
+                                        <a href="#">
+                                            <button class="btn btn-block btn-danger btn-lg bg-navy" id="submit"
+                                                style="width: min-content;" type="submit">Submit
+                                            </button>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.row -->
+                </section>
+                <!-- /.content -->
+            </form>
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                <img align="right" alt="Logo image" src="Images/img3.png" width="20%">
+            </div>
+            <!-- Default to the left -->
+            <strong>KardiaSoft v0.1 &copy; 2019 <a href="http://www.kardiatool.eu/">KardiaTool</a>.</strong> All rights
+            reserved.
+        </footer>
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="plugins/iCheck/icheck.min.js"></script>
+    <!-- FastClick -->
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+
+            var full_name = sessionStorage.getItem("username") + " " + sessionStorage.getItem("usersurname");
+            document.getElementById("username").innerHTML = full_name;
+            document.getElementById("person_name").innerHTML = full_name;
+            document.getElementById("role_id").innerHTML = sessionStorage.getItem("roleIdname");
+            document.getElementById("role_id_two").innerHTML = sessionStorage.getItem("roleIdname");
+            document.getElementById("username_two").innerHTML = full_name;
+
+
+            $('#sign_out').click(function () {
+                alert("Are you sure you want to sign out?");
+                localStorage.clear();
+                window.location = "index.html";
+            })
+
+            var url_visit_description = localStorage.getItem("url") + "/settings/visitDescription";
+            $.getJSON(url_visit_description, function (data) {
+                $(data).each(function (index, value) {
+                    $('#opt_baseline_visit_description').append('<option value="' + '">' + value.visitDescription[0] + '<option >' + value.visitDescription[1] + '</option>' +
+                        '<option >' + value.visitDescription[2] + '</option>' + '<option >' + value.visitDescription[3] + '<option >' + value.visitDescription[4] + '</option>');
+                });
+            });
+
+            var url_visit_description = localStorage.getItem("url") + "/settings/visitDescription";
+            $.getJSON(url_visit_description, function (data) {
+                $(data).each(function (index, value) {
+                    $('#opt_visit_description').append('<option value="' + '">' + value.visitDescription[0] + '<option >' + value.visitDescription[1] + '</option>' +
+                        '<option >' + value.visitDescription[2] + '</option>' + '<option >' + value.visitDescription[3] + '<option >' + value.visitDescription[4] + '</option>');
+                });
+            });
+
+            var url_studySite = localStorage.getItem("url") + "/settings/healthcareCenters";
+            $.getJSON(url_studySite, function (data) {
+                $(data.healthcareCenters).each(function (index, value) {
+                    $('#opt_study_site').append('<option value="' + '"' + value.healthcareCenterId + '<option >' + value.name + '</option>');
+                });
+            });
+
+
+            var url_studyGroup = localStorage.getItem("url") + "/settings/studyGroups";
+            $.getJSON(url_studyGroup, function (data) {
+                $(data.studyGroups).each(function (index, value) {
+                    $('#opt_study_group').append('<option value="' + '"' + value.studyGroupId + '<option >' + value.description + '</option>');
+                });
+            });
+
+            var url_medicalDevices = localStorage.getItem("url") + "/settings/medicalDevices";
+            $.getJSON(url_medicalDevices, function (data) {
+                $(data.medicalDevices).each(function (index, value) {
+                    $('#opt_device').append('<option value="' + '"' + value.medicalDeviceId + '<option >' + value.description + '</option>');
+                });
+            });
+
+            var url_symptoms = localStorage.getItem("url") + "/settings/symptoms";
+            $.getJSON(url_symptoms, function (data) {
+                $(data.symptoms).each(function (index, value) {
+                    $('#nyha').append('<option value="' + '">' + value.nyha[0] + '<option >' + value.nyha[1] + '</option>' +
+                        '<option >' + value.nyha[2] + '</option>' + '<option >' + value.nyha[3] + '</option>');
+                });
+            });
+
+            $('#datepicker').datepicker({
+                autoclose: true,
+                orientation: "auto bottom",
+                clearBtn: true
+            })
+            $('#datepicker_two').datepicker({
+                autoclose: true,
+                orientation: "auto bottom",
+                clearBtn: true
+            })
+
+            var url_vaccinations = localStorage.getItem("url") + "/settings/vaccinations"
+
+            $.getJSON(url_vaccinations, function (data) {
+                $(data.vaccinations).each(function (index, value) {
+                    $('#influence').append('<option value="' + '">' + value.influence[0] + '<option >' + value.influence[1] + '</option>' +
+                        '<option >' + value.influence[2] + '</option>');
+                })
+            })
+
+            $.getJSON(url_vaccinations, function (data) {
+                $(data.vaccinations).each(function (index, value) {
+                    $('#pneumococcal').append('<option value="' + '">' + value.pneumococcal[0] + '<option >' + value.pneumococcal[1] + '</option>' +
+                        '<option >' + value.pneumococcal[2] + '</option>');
+                })
+            })
+
+            var url_physicalExaminations = localStorage.getItem("url") + "/settings/physicalExaminations";
+
+            $.getJSON(url_physicalExaminations, function (data) {
+                //TODO dynamically load data
+            });
+
+
+            var name = localStorage.getItem("username");
+            var surname = localStorage.getItem("usersurname");
+            document.getElementById("doctor").innerHTML = name + " " + surname
+            document.getElementById("user_data_one").innerHTML = name + " " + surname
+            document.getElementById("name_left").innerHTML = name + " " + surname
+
+
+                $('#opt_allergies_1').on("click", function () {
+                    $('#textarea_allergies').prop("disabled", false);
+                });
+
+                $('#opt_allergies_2').on("click", function () {
+                    $('#textarea_allergies').prop("disabled", true);
+                    $('#textarea_allergies').val("");
+                });
+
+                $('#opt_diuretic_1').on("click", function () {
+                    $('#diuretic_dosage').prop("disabled", false);
+                });
+
+                $('#opt_diuretic_2').on("click", function () {
+                    $('#diuretic_dosage').prop("disabled", true);
+                    $('#diuretic_dosage').val("");
+                });
+
+                $('#opt_other_med_1').on("click", function () {
+                    $('#textarea_medications').prop("disabled", false);
+                });
+
+                $('#opt_other_med_2').on("click", function () {
+                    $('#textarea_medications').prop("disabled", true);
+                    $('#textarea_medications').val("");
+                });
+
+                $('#opt_follow_up_1').on("click", function () {
+                    $('#multiple_follow_up').prop("disabled", false);
+                });
+
+                $('#opt_follow_up_2').on("click", function () {
+                    $('#multiple_follow_up').prop("disabled", true);
+                });
+
+                $('#submit').prop("disabled", true);
+
+                $(function () {
+                    $("input, select").on('keyup keypress blur change', function () {
+                        var empty = false;
+                        $("input, select").each(function () {
+                            if ($(this).val() == '') {
+                                empty = true;
+                            }
+                        });
+                        if (empty) {
+                            $('#submit').prop("disabled", true);
+                        } else {
+                            $('#submit').prop("disabled", false);
+                        }
+                    });
+                });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
